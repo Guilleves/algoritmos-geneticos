@@ -52,9 +52,7 @@ for m in range(10):
     cromosoma = random.randint(0, coef)  #genero un int random 
     cromosomaList.append(cromosoma)
   
-
-
-    #tambien puedo usar del list[:], da igual
+#tambien puedo usar del list[:], da igual
 genList = []
 objectiveList = []
 fitnessList = []
@@ -104,54 +102,19 @@ for l in range(5):#hago 5 loops porque son 5 pares
 
     azarRuleta2 = random.randint(0, 99)
     cromosomaAzar2 = ruletaList[azarRuleta2] #elijo el 2do valor del par
-    
+      
     crossoverRandom = random.random() #tiro un random para ver el crossover
-    
+        
     if crossoverRandom<=crossoverProb: #si el crossover da si:
         corteRandom = random.randint(0, 29)
         
         hijo1 = crossover(cromosomaAzar1, cromosomaAzar2, corteRandom) #pongo los genes hasta el corteRandom
    	hijo2 = crossover(cromosomaAzar2, cromosomaAzar1, corteRandom)
+   	print ('cambio a ' + hijo1)
+   	print ('cambio a ' + hijo2)
     
     else:
         hijo1 = genList[cromosomaAzar1]
         hijo2 = genList[cromosomaAzar2]
-    
-    mutationRandom1 = random.random
-    mutationRandom2 = random.random
-    
-    if mutationRandom1 <= mutationProb:  #pruebo si muta y cambio el valor
-        genChange = random.randint(0, 29)
-    
-       	if (hijo1[genChange] == 0):
-            hijo1[genChange] = 1
-           
-       	else:
-       	    hijo1[genChange] = 0
-    else:
-        hijo1 = int(genList[cromosomaAzar1])
-            
-    if mutationRandom2 <= mutationProb:
-        genChange = random.randint(0, 29)
-    
-   	if (hijo2[genChange] == 0):
-            hijo2[genChange] = 1
-           
-   	else:
-   	    hijo2[genChange] = 0
-    else:
-        hijo2 =  int(genList[cromosomaAzar2])
-    
-    hijo1 = str(hijo1)
-    hijo2 = str(hijo2)
-    genListNew.append(hijo1) #guardo los cromosomas nuevos en otra lista
-    cromosomaListNew.append(int(hijo1))
-    genListNew.append(hijo2)
-    cromosomaListNew.append(int(hijo2))
-    
-genList = genListNew #reemplazo la lista original con los hijos
-
-cromosomaList = cromosomaListNew
-              	
-print cromosomaList
-print genList 
+        print ('sigue ' + hijo1)
+        print ('sigue ' + hijo2)
